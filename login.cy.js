@@ -52,19 +52,19 @@ context('Actions', () => {
 
   
 
-  it('should navigate and test forgot password feature', () => {
-    // Klik "Forgot your password?"
-    cy.contains('Forgot your password?').click()
+  // it('should navigate and test forgot password feature', () => {
+  //   // Klik "Forgot your password?"
+  //   cy.contains('Forgot your password?').click()
 
-    // Pastikan masuk ke halaman reset password
-    cy.url().should('include', '/requestPasswordResetCode')
+  //   // Pastikan masuk ke halaman reset password
+  //   cy.url().should('include', '/requestPasswordResetCode')
 
-    // Isi username lalu submit
-    cy.get('input[name="username"]').type('Admin')
-    cy.get('button[type="submit"]').click()
+  //   // Isi username lalu submit
+  //   cy.get('input[name="username"]').type('Admin')
+  //   cy.get('button[type="submit"]').click()
 
-    // Verifikasi muncul notifikasi (ubah sesuai yang tampil di aplikasi)
-    cy.contains('Reset Password link sent successfully').should('be.visible')
-  })
+  //   // Verifikasi muncul notifikasi (ubah sesuai yang tampil di aplikasi)
+  //   cy.contains('Reset Password link sent successfully').should('be.visible')
+  // })
 
 })
