@@ -65,4 +65,19 @@ context('Actions', () => {
   //   cy.contains('Reset Password link sent successfully').should('be.visible')
   // })
 
+  it('should navigate and test forgot password feature', () => {
+    // Klik "Forgot your password?"
+    cy.contains('Forgot your password?').click()
+
+    // Pastikan masuk ke halaman reset password
+    cy.url().should('include', '/requestPasswordResetCode')
+
+    // Isi username lalu submit
+    cy.get('input[name="username"]').type('Admin')
+    cy.get('button[type="submit"]').click()
+
+    // Verifikasi muncul notifikasi (ubah sesuai yang tampil di aplikasi)
+    cy.contains('Reset Password link sent successfully').should('be.visible')
+  })
+
 })
